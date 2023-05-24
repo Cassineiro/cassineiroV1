@@ -1,500 +1,489 @@
-
-#myBtn {
-  display: none; 
-  position: fixed; 
-  bottom: 20px; 
-  right: 30px; 
-  z-index: 99; 
-  border: none; 
-  outline: none; 
-  background-color: #DF9C34; 
-  color: white; 
-  cursor: pointer; 
-  padding: 15px; 
-  border-radius: 10px; 
-  font-size: 18px; 
+body {
+  font-family: Helvetica;
 }
 
-#myBtn:hover {
-  background-color: #b3771d; 
-}
-body{
-    font-family: Helvetica;
-}
-/*NAVBAR*/
+/*=====NAV BAR=====*/
 #logoNav {
-    position: absolute;
-    width: 80px;
-    left: 30px;
-
+  position: absolute;
+  width: 80px;
+  left: 30px;
 }
-a{
+
+a {
   text-decoration: none;
   color: inherit;
 }
-/* link que ainda não foi visitado */
+
 a:link {
   color: inherit
 }
 
-/* link que foi visitado */
 a:visited {
-   color: inherit
+  color: inherit
 }
 
-/* mouse over */
 a:hover {
   color: inherit
 }
 
-/* link selecionado */
 a:active {
   color: inherit
 }
+
 .navbar {
-    overflow: hidden;
-    background-color: rgb(255, 255, 255);
-    font-family: Arial;
-    border-radius: 10px;
-    margin-left: 150px;
-    margin-top: 10px;
-
-
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  font-family: Arial;
+  border-radius: 10px;
+  margin-left: 150px;
+  margin-top: 10px;
 }
 
 .navbar a {
-    float: left;
-    font-size: 16px;
-    color: #161616;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    border-radius: 10px;
+  float: left;
+  font-size: 16px;
+  color: #161616;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 10px;
 }
 
 .dropdown {
-    float: left;
-    overflow: hidden;
+  float: left;
+  overflow: hidden;
 }
 
 .dropdown .dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: #161616;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-    border-radius: 10px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #161616;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  border-radius: 10px;
 }
 
 .navbar a:hover,
 .dropdown:hover .dropbtn {
-    background-color: #C51A29;
-    color: rgb(255, 255, 255);
-    border-radius: 10px;
+  background-color: #C51A29;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
 }
 
 .dropdown-content {
-    border-radius: 10px;
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+  border-radius: 10px;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
 }
 
 .dropdown-content a:hover {
-    background-color: #c51a28ab;
+  background-color: #c51a28ab;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
 }
 
-#logo{
-    width: 300px;
-    position: absolute;
-    left: 900px;
+#logo {
+  width: 300px;
+  position: absolute;
+  left: 900px;
 }
 
-/*HOME*/
-#home{
-    position: absolute;
-    top: 100px;
-    width: 1000px;
-    height: 480px;
+/*=====SLIDER=====*/
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  position: relative;
+  top: 90px;
+  left: 160px;
+  color: #C51A29;
+}
+
+.animation {
+  opacity: 0;
+  transform: translateX(-300px);
+  transition: all 0.7s ease-out;
+  transition-delay: 0.4s;
+}
+
+.scroll-animation {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: true;
+}
+
+:root {
+  --d: 2500ms;
+  --angle: 90deg;
+  --gradX: 100%;
+  --gradY: 50%;
+  --c1: #DF9C34;
+  --c2: #C51A29;
+}
+
+#JackPot {
+  min-width: min(20rem, 100%);
+  font-size: 3vw;
+  margin: max(1rem, 3vw);
+  border: 0.35rem solid;
+  padding: 3vw;
+  border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+  animation: borderRotate var(--d) linear infinite forwards;
+
+}
+
+.box:nth-child(2) {
+  border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+  animation: borderRadial var(--d) linear infinite forwards;
+}
+
+@keyframes borderRotate {
+  100% {
+    --angle: 420deg;
   }
-  .title{
-    padding-top: 10px;
-    padding-left: 50px;
-    color: #C51A29;
+}
+
+@keyframes borderRadial {
+  20% {
+    --gradX: 100%;
+    --gradY: 50%;
   }
-  .title b{
-    color: #DF9C34;
+
+  40% {
+    --gradX: 100%;
+    --gradY: 100%;
   }
-  section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    position: relative;
-    top: 90px;
-    left: 160px;
-    color: #C51A29;
+
+  60% {
+    --gradX: 50%;
+    --gradY: 100%;
   }
-  
-  .animation {
-    opacity: 0;
-    transform: translateX(-300px);
-    transition: all 0.7s ease-out;
-    transition-delay: 0.4s;
-    
-  
+
+  80% {
+    --gradX: 0%;
+    --gradY: 50%;
   }
-  
-  .scroll-animation {
-    opacity: 1;
-    transform: translateX(0);
+
+  100% {
+    --gradX: 50%;
+    --gradY: 0%;
   }
-  
-  @property --angle {
-    syntax: '<angle>';
-    initial-value: 90deg;
-    inherits: true;
-  }
-  
-  @property --gradX {
-    syntax: '<percentage>';
-    initial-value: 50%;
-    inherits: true;
-  }
-  
-  @property --gradY {
-    syntax: '<percentage>';
-    initial-value: 0%;
-    inherits: true;
-  }:root {
-      --d: 2500ms;
-      --angle: 90deg;
-      --gradX: 100%;
-      --gradY: 50%;
-      --c1: #DF9C34;
-      --c2: #C51A29;
-  } 
-  #JackPot{
-    min-width: min(20rem, 100%);
-    font-size: 3vw;
-      margin: max(1rem, 3vw);
-      border: 0.35rem solid;
-      padding: 3vw;
-      border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
-      animation: borderRotate var(--d) linear infinite forwards;
-    
-  }
-  
-  .box:nth-child(2) {
-      border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
-      animation: borderRadial var(--d) linear infinite forwards;
-  }
-  
-  @keyframes borderRotate {
-      100% {
-          --angle: 420deg;
-      }
-  }
-  
-  @keyframes borderRadial {
-      20% {
-          --gradX: 100%;
-          --gradY: 50%;
-      }
-      40% {
-          --gradX: 100%;
-          --gradY: 100%;
-      }
-      60% {
-          --gradX: 50%;
-          --gradY: 100%;
-      }
-      80% {
-          --gradX: 0%;
-          --gradY: 50%;
-      }
-      100% {
-          --gradX: 50%;
-          --gradY: 0%;
-      }
-  }
-  
-  /*button*/
-  .btn {
-    border-radius: .25rem;
-    text-transform: uppercase;
-    font-style: normal;
-    font-weight: 400;
-    padding-left: 25px;
-    padding-right: 25px;
-    color: #fff;
-    -webkit-clip-path: polygon(0 0,0 0,100% 0,100% 0,100% calc(100% - 15px),calc(100% - 15px) 100%,15px 100%,0 100%);
-    clip-path: polygon(0 0,0 0,100% 0,100% 0,100% calc(100% - 15px),calc(100% - 15px) 100%,15px 100%,0 100%);
-    height: 40px;
-    font-size: 0.7rem;
-    line-height: 14px;
-    letter-spacing: 1.2px;
-    transition: .2s .1s;
-    background-image: linear-gradient(90deg,#775016,#DF9C34);
-    border: 0 solid;
-    overflow: hidden;
-    margin-left: 50px;
-    position: relative;
-    top: 10px;
-    
-  }
-  
-  .btn:hover {
-    cursor: pointer;
-    transition: all .3s ease-in;
-    padding-right: 30px;
-    padding-left: 30px;
-  }
-  #subTitle{
-    position: relative;
-    top: 10px;
-    left: 50px;
-    font-weight: normal;
-    color: #DF9C34;
-  }
-  .pic-ctn {
-    width: 100vw;
-    height: 200px;
-  }
-  
-  @keyframes display {
-    0% {
-      transform: translateX(200px);
-      opacity: 0;
-    }
-    10% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    20% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    30% {
-      transform: translateX(-200px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(-200px);
-      opacity: 0;
-    }
-  }
-  
-/*JOGOS*/
-#jogos{
-    position: relative;
-   
-    height: 1500px;
-    top: 700px;
+}
+
+
+/*=====HOME*=====*/
+#home {
+  position: absolute;
+  top: 100px;
+  width: 1000px;
+  height: 480px;
+}
+
+.title {
+  padding-top: 10px;
+  padding-left: 50px;
+  color: #C51A29;
+}
+
+.title b {
+  color: #DF9C34;
+}
+
+.btn {
+  border-radius: .25rem;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 400;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #fff;
+  -webkit-clip-path: polygon(0 0, 0 0, 100% 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 100%);
+  clip-path: polygon(0 0, 0 0, 100% 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 100%);
+  height: 40px;
+  font-size: 0.7rem;
+  line-height: 14px;
+  letter-spacing: 1.2px;
+  transition: .2s .1s;
+  background-image: linear-gradient(90deg, #775016, #DF9C34);
+  border: 0 solid;
+  overflow: hidden;
+  margin-left: 50px;
+  position: relative;
+  top: 10px;
+
+}
+
+.btn:hover {
+  cursor: pointer;
+  transition: all .3s ease-in;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+#subTitle {
+  position: relative;
+  top: 10px;
+  left: 50px;
+  font-weight: normal;
+  color: #DF9C34;
+}
+
+/*=====JOGOS=====*/
+#jogos {
+  position: relative;
+  height: 1500px;
+  top: 700px;
 }
 
 /*DICE ROLL*/
-#DiceRoll{
-   background-color: #f0f0f0;
-   border-radius: 20px;
-   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;    height: 400px;
+#DiceRoll {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  height: 400px;
 }
-#drTitle{
-    color: #C51A29;
-    position: relative;
-    margin-left: 100px;
-    top: 100px;
-    font-size: 50px
-}   
-#drTxt{
-    position: relative;
-    top: 100px;
-    margin-left: 100px;
-    font-size: 20px;
+
+#drTitle {
+  color: #C51A29;
+  position: relative;
+  margin-left: 100px;
+  top: 100px;
+  font-size: 50px
 }
+
+#drTxt {
+  position: relative;
+  top: 100px;
+  margin-left: 100px;
+  font-size: 20px;
+}
+
 section.dice {
-    margin: 0 auto;
-    height: 50px; width: 50px;
-    position: relative;
-    transform-style: preserve-3d;
-    animation: turn 10s infinite linear;
-    margin-left: 800px;
-    top: -150px;
-  }
-  @keyframes turn{
-    0% {   transform: scale(2)  rotateY(0deg) rotateX(30deg) translateY(100px)}
-    100% { transform: scale(2) rotateY(360deg) rotateX(30deg) translateY(100px)}
-  }
-  .div {
-    position: absolute;
-    top: 0; left: 0;
-    font-size: 50px;
-    background: white;
-    width: 50px; height: 50px;
-    text-align: center;
-    box-shadow: inset 0 0 25px #aaa, 0 0 10px #fff;
-    border-radius: 2px;
-  }
-  .div:after, .div:before {
-    position: relative;
-    display: block;
-    transform: rotate(0.1deg);  
-  }
-  .div:nth-child(1):after{
-    content: ".";  
-    bottom: 20px;  
-  }
-  .div:nth-child(2) {
-    transform: 
-      translateX(50%)
-      rotateY(90deg) 
-      translateX(50%);
-  }
-  .div:nth-child(2):after{
-    content: ". .";
-    transform: rotate(45deg);  
-    left: 10px; bottom: 15px;
-  }
-  .div:nth-child(3) {
-    transform: 
-      translateY(50%)
-      rotateX(90deg) 
-      translateY(-50%);
-  }
-  .div:nth-child(3):after{
-    content: "...";
-    transform: rotate(45deg);  
-    left: 10px; bottom: 15px;
-  }
-  .div:nth-child(4) {
-    transform: 
-      translateY(-50%)
-      rotateX(90deg) 
-      translateY(-50%);
-  }
-  .div:nth-child(4):before{
-    content: ". .";
-    bottom: 35px;
-  }
-  .div:nth-child(4):after{
-    content: ". .";
-    bottom: 65px;
-  }
-  .div:nth-child(5) {
-    transform: 
-      translateX(-50%)
-      rotateY(-90deg) 
-      translateX(-50%);
-  }
-  .div:nth-child(5):before{
-    content: ". . .";
-    line-height: 14px;
-    bottom: 10px;
-  }
-  .div:nth-child(5):after{
-    content: ". .";
-    bottom: 33px;
-  }
-  .div:nth-child(6) {
-    transform: 
-      rotateY(-90deg) 
-      translateX(-100%)
-      rotateY(-90deg);
-  }
-  .div:nth-child(6):before{
-    content: "...";
-    bottom: 35px;
-  }
-  .div:nth-child(6):after{
-    content: "...";
-    bottom: 60px;
+  margin: 0 auto;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: turn 10s infinite linear;
+  margin-left: 800px;
+  top: -150px;
+}
+
+@keyframes turn {
+  0% {
+    transform: scale(2) rotateY(0deg) rotateX(30deg) translateY(100px)
   }
 
+  100% {
+    transform: scale(2) rotateY(360deg) rotateX(30deg) translateY(100px)
+  }
+}
 
-  #jackPot{
-    background-color: #f0f0f0;
-   border-radius: 20px;
-   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;    height: 400px;
-  
-  }
-  #jackImg{
-    width: 400px;
-    position: relative;
-    size: 100px;
-    left: 750px;
-    top: -150px;
-  }
-  #jpTitle{
-    color: #C51A29;
-    position: relative;
-    margin-left: 100px;
-    top: 100px;
-    font-size: 50px
-  }
-  #jpTxt{
-    position: relative;
-    top: 100px;
-    margin-left: 100px;
-    font-size: 20px;
-  }
+.div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 50px;
+  background: white;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  box-shadow: inset 0 0 25px #aaa, 0 0 10px #fff;
+  border-radius: 2px;
+}
 
-  /*ROLETA*/
-  #Roleta{
-    background-color: #f0f0f0;
-    border-radius: 20px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;    height: 400px;
-    height: 650px;
-  }
-  #rTitle{
-    color: #C51A29;
-    position: relative;
-    margin-left: 100px;
-    top: 100px;
-    font-size: 50px
-  }
-  #rTxt{
-    position: relative;
-    top: 100px;
-    margin-left: 100px;
-    font-size: 20px;
-  }
-  .folha {
-    position: relative;
-    width: 600px;
-    height: 600px;
-    margin-left: 600px;
-    margin-top: -180px;
-    padding: 50px;
+.div:after,
+.div:before {
+  position: relative;
+  display: block;
+  transform: rotate(0.1deg);
+}
+
+.div:nth-child(1):after {
+  content: ".";
+  bottom: 20px;
+}
+
+.div:nth-child(2) {
+  transform:
+    translateX(50%) rotateY(90deg) translateX(50%);
+}
+
+.div:nth-child(2):after {
+  content: ". .";
+  transform: rotate(45deg);
+  left: 10px;
+  bottom: 15px;
+}
+
+.div:nth-child(3) {
+  transform:
+    translateY(50%) rotateX(90deg) translateY(-50%);
+}
+
+.div:nth-child(3):after {
+  content: "...";
+  transform: rotate(45deg);
+  left: 10px;
+  bottom: 15px;
+}
+
+.div:nth-child(4) {
+  transform:
+    translateY(-50%) rotateX(90deg) translateY(-50%);
+}
+
+.div:nth-child(4):before {
+  content: ". .";
+  bottom: 35px;
+}
+
+.div:nth-child(4):after {
+  content: ". .";
+  bottom: 65px;
+}
+
+.div:nth-child(5) {
+  transform:
+    translateX(-50%) rotateY(-90deg) translateX(-50%);
+}
+
+.div:nth-child(5):before {
+  content: ". . .";
+  line-height: 14px;
+  bottom: 10px;
+}
+
+.div:nth-child(5):after {
+  content: ". .";
+  bottom: 33px;
+}
+
+.div:nth-child(6) {
+  transform:
+    rotateY(-90deg) translateX(-100%) rotateY(-90deg);
+}
+
+.div:nth-child(6):before {
+  content: "...";
+  bottom: 35px;
+}
+
+.div:nth-child(6):after {
+  content: "...";
+  bottom: 60px;
+}
+
+/*JACKPOT*/
+#jackPot {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  height: 400px;
+
+}
+
+#jackImg {
+  width: 400px;
+  position: relative;
+  size: 100px;
+  left: 750px;
+  top: -150px;
+}
+
+#jpTitle {
+  color: #C51A29;
+  position: relative;
+  margin-left: 100px;
+  top: 100px;
+  font-size: 50px
+}
+
+#jpTxt {
+  position: relative;
+  top: 100px;
+  margin-left: 100px;
+  font-size: 20px;
+}
+
+/*ROLETA*/
+#Roleta {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  height: 400px;
+  height: 650px;
+}
+
+#rTitle {
+  color: #C51A29;
+  position: relative;
+  margin-left: 100px;
+  top: 100px;
+  font-size: 50px
+}
+
+#rTxt {
+  position: relative;
+  top: 100px;
+  margin-left: 100px;
+  font-size: 20px;
+}
+
+.folha {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin-left: 600px;
+  margin-top: -180px;
+  padding: 50px;
 }
 
 .roleta {
-    border: 10px solid #FFF;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    overflow: hidden;
-/*    animation: roleta 5s linear infinite;*/
+  border: 10px solid #FFF;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  /*    animation: roleta 5s linear infinite;*/
 }
 
 path {
@@ -502,16 +491,16 @@ path {
 }
 
 .seta {
-    position: absolute;
-    left: 48.5%;
-    border-bottom: 0px solid transparent;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 40px solid #1b7e03;
-    width: 0;
-    height: 0;
-    z-index: 999;
-    animation: animacaoSeta .35s linear infinite;
+  position: absolute;
+  left: 48.5%;
+  border-bottom: 0px solid transparent;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 40px solid #1b7e03;
+  width: 0;
+  height: 0;
+  z-index: 999;
+  animation: animacaoSeta .35s linear infinite;
 }
 
 .box1,
@@ -522,168 +511,214 @@ path {
 .box6,
 .box7,
 .box8 {
-    position: absolute;
-    width: 0;
-    height: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
 }
 
 .box1 {
-    border-top: 150px solid transparent;
-    border-right: 150px solid transparent;
-    border-bottom: 150px solid #C51A29;
-    border-left: 150px solid #C51A29;
+  border-top: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 150px solid #C51A29;
+  border-left: 150px solid #C51A29;
 }
 
 .box5 {
-    border-top: 150px solid #DF9C34;
-    border-right: 150px solid #DF9C34;
-    border-bottom: 150px solid transparent;
-    border-left: 150px solid transparent;
+  border-top: 150px solid #DF9C34;
+  border-right: 150px solid #DF9C34;
+  border-bottom: 150px solid transparent;
+  border-left: 150px solid transparent;
 }
 
 .box2 {
-    border-top: 150px solid #C51A29;
-    border-right: 150px solid transparent;
-    border-bottom: 150px solid transparent;
-    border-left: 150px solid #C51A29;
-    left: 50%;
+  border-top: 150px solid #C51A29;
+  border-right: 150px solid transparent;
+  border-bottom: 150px solid transparent;
+  border-left: 150px solid #C51A29;
+  left: 50%;
 }
 
 .box6 {
-    border-top: 150px solid transparent;
-    border-right: 150px solid #DF9C34;
-    border-bottom: 150px solid #DF9C34;
-    border-left: 150px solid transparent;
-    left: 50%
+  border-top: 150px solid transparent;
+  border-right: 150px solid #DF9C34;
+  border-bottom: 150px solid #DF9C34;
+  border-left: 150px solid transparent;
+  left: 50%
 }
 
 .box4 {
-    border-top: 150px solid transparent;
-    border-right: 150px solid transparent;
-    border-bottom: 150px solid #DF9C34;
-    border-left: 150px solid #DF9C34;
-    top: 50%;
-    left: 50%;
+  border-top: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 150px solid #DF9C34;
+  border-left: 150px solid #DF9C34;
+  top: 50%;
+  left: 50%;
 }
 
 .box8 {
-    border-top: 150px solid #C51A29;
-    border-right: 150px solid #C51A29;
-    border-bottom: 150px solid transparent;
-    border-left: 150px solid transparent;
-    top: 50%;
-    left: 50%;
+  border-top: 150px solid #C51A29;
+  border-right: 150px solid #C51A29;
+  border-bottom: 150px solid transparent;
+  border-left: 150px solid transparent;
+  top: 50%;
+  left: 50%;
 }
 
 .box3 {
-    border-top: 150px solid #DF9C34;
-    border-right: 150px solid transparent;
-    border-bottom: 150px solid transparent;
-    border-left: 150px solid #DF9C34;
-    top: 50%;
+  border-top: 150px solid #DF9C34;
+  border-right: 150px solid transparent;
+  border-bottom: 150px solid transparent;
+  border-left: 150px solid #DF9C34;
+  top: 50%;
 }
 
 .box7 {
-    border-top: 150px solid transparent;
-    border-right: 150px solid #C51A29;
-    border-bottom: 150px solid #C51A29;
-    border-left: 150px solid transparent;
-    top: 50%;
+  border-top: 150px solid transparent;
+  border-right: 150px solid #C51A29;
+  border-bottom: 150px solid #C51A29;
+  border-left: 150px solid transparent;
+  top: 50%;
 }
 
 @keyframes roleta {
-    0% {
-        transform: rotate(0deg)
-    }
+  0% {
+    transform: rotate(0deg)
+  }
 
-    100% {
-        transform: rotate(360deg)
-    }
+  100% {
+    transform: rotate(360deg)
+  }
 }
 
 @keyframes animacaoSeta {
-    0% { transform: rotate(0deg)}
-    25% { transform: rotate(-15deg)}
-    75% { transform: rotate(15deg)}
-    100% { transform: rotate(0deg)}
+  0% {
+    transform: rotate(0deg)
+  }
+
+  25% {
+    transform: rotate(-15deg)
+  }
+
+  75% {
+    transform: rotate(15deg)
+  }
+
+  100% {
+    transform: rotate(0deg)
+  }
 }
 
 .premio {
-    position: absolute;
-    z-index: 999;
-    font-size: 27px;
-    font-weight: bold;
-    color: white;
+  position: absolute;
+  z-index: 999;
+  font-size: 27px;
+  font-weight: bold;
+  color: white;
 }
 
 .premio1 {
-    top: 35%;
-    left: 8%;
-    transform: rotate(25deg);
+  top: 35%;
+  left: 8%;
+  transform: rotate(25deg);
 }
 
 .premio2 {
-    top: 15%;
-    left: 30%;
-    transform: rotate(55deg);
+  top: 15%;
+  left: 30%;
+  transform: rotate(55deg);
 }
 
 .premio3 {
-    top: 15%;
-    left: 55%;
-    transform: rotate(115deg);
+  top: 15%;
+  left: 55%;
+  transform: rotate(115deg);
 }
 
 .premio4 {
-    top: 33%;
-    right: 10%;
-    transform: rotate(150deg);
+  top: 33%;
+  right: 10%;
+  transform: rotate(150deg);
 }
 
 .premio5 {
-    top: 60%;
-    right: 10%;
-    transform: rotate(200deg);
+  top: 60%;
+  right: 10%;
+  transform: rotate(200deg);
 }
 
 .premio6 {
-    top: 80%;
-    right: 30%;
-    transform: rotate(250deg);
+  top: 80%;
+  right: 30%;
+  transform: rotate(250deg);
 }
 
 .premio7 {
-    top: 80%;
-    left: 30%;
-    transform: rotate(306deg);
+  top: 80%;
+  left: 30%;
+  transform: rotate(306deg);
 }
 
 .premio8 {
-    top: 60%;
-    left: 10%;
-    transform: rotate(333deg);
+  top: 60%;
+  left: 10%;
+  transform: rotate(333deg);
 }
 
 .btnRoleta {
-    position: absolute;
-    color: white;
-    background-color: #000;
-    border: 15px solid #000;
-    cursor: pointer;
-    top:45%;
-    left: 45%;
-    font-size: 35px;
-    border-radius: 50%;
-    height: 42px;
-    width: 42px;
-    text-align: center;
+  position: absolute;
+  color: white;
+  background-color: #000;
+  border: 15px solid #000;
+  cursor: pointer;
+  top: 45%;
+  left: 45%;
+  font-size: 35px;
+  border-radius: 50%;
+  height: 42px;
+  width: 42px;
+  text-align: center;
 }
 
 .play {
-    z-index: 999;
+  z-index: 999;
 }
 
 .stop {
-/*    visibility: hidden;*/
-    animation-play-state: paused;
+  /*    visibility: hidden;*/
+  animation-play-state: paused;
+}
+
+
+.pic-ctn {
+  width: 100vw;
+  height: 200px;
+}
+
+/*=====RESPONSIVIDADE=====*/
+
+@keyframes display {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  30% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
 }
