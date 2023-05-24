@@ -9,8 +9,9 @@ body {
 /*NAVBAR*/
 #logoNav {
   position: absolute;
-  width: 80px;
+  width: 20px;
   left: 30px;
+ 
 }
 
 a {
@@ -44,7 +45,7 @@ a:active {
   font-family: Arial;
   border-radius: 10px;
   margin-left: 150px;
-  margin-top: 10px;
+  margin-top: -20px;
 }
 
 .navbar a {
@@ -108,8 +109,9 @@ a:active {
   display: block;
 }
 
+
 #logo {
-  width: 300px;
+  width: 200px;
   position: absolute;
   left: 900px;
 }
@@ -225,12 +227,14 @@ body {
   }
 
   #logoNav {
-    width: 120px;
-    left: 60px;
+    width: 80px;
+    left: 30px;
+    top: 10px;
   }
 
   .navbar {
-    margin-left: 250px;
+    margin-left: 100px;
+    
   }
 
   #logo {
