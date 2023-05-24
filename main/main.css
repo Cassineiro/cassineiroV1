@@ -315,8 +315,9 @@ a:active {
 
 /*DICE ROLL*/
 #DiceRoll{
-   
-    height: 400px;
+   background-color: #f0f0f0;
+   border-radius: 20px;
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;    height: 400px;
 }
 #drTitle{
     color: #C51A29;
@@ -431,13 +432,17 @@ section.dice {
 
 
   #jackPot{
+    background-color: #f0f0f0;
+   border-radius: 20px;
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;    height: 400px;
   
   }
   #jackImg{
+    width: 400px;
     position: relative;
     size: 100px;
-    left: 700px;
-    top: -100px;
+    left: 750px;
+    top: -150px;
   }
   #jpTitle{
     color: #C51A29;
@@ -455,8 +460,10 @@ section.dice {
 
   /*ROLETA*/
   #Roleta{
-   
-    height: 500px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;    height: 400px;
+    height: 650px;
   }
   #rTitle{
     color: #C51A29;
@@ -475,8 +482,8 @@ section.dice {
     position: relative;
     width: 600px;
     height: 600px;
-    margin-left: 500px;
-    margin-top: -200px;
+    margin-left: 600px;
+    margin-top: -180px;
     padding: 50px;
 }
 
