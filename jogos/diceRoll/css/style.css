@@ -1,0 +1,275 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    position: relative;
+    top: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+}
+
+.bet-form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+input{
+    font-size: 15px;
+    width: 100%;
+    height: 25px;
+    border-bottom-color: #DF9C34;
+    border-top-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    outline: none;
+}
+
+#rollButton {
+    font-family: monospace;
+    font-size: 1.5rem;
+    color: #FFFF;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #db2c3a;
+    background: #C51A29;
+    box-shadow: 3px 3px #91151f;
+    cursor: pointer;
+    margin: 35px 0;
+  }
+  
+  #rollButton:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+  }
+  
+#result{
+    font-weight: bold;
+}
+.dice {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+    transition: transform 0.5s;
+    cursor: pointer;
+    right: 100px;
+}
+
+.dice.rolling {
+    animation: roll 1s linear infinite;
+}
+
+.dice .face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #DF9C34;
+    box-sizing: border-box;
+    font-size: 50px;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    border-radius: 19px;
+    color: #fff;
+}
+
+.dice .front {
+    transform: translateZ(50px);
+    background-color: #db2c3a;
+}
+
+.dice .back {
+    transform: translateZ(-50px) rotateY(180deg);
+    background-color: #DF9C34;
+}
+
+.dice .left {
+    transform: rotateY(-90deg) translateX(-50px);
+    transform-origin: center left;
+    background-color: #C51A29;
+}
+
+.dice .right {
+    transform: rotateY(90deg) translateX(50px);
+    transform-origin: center right;
+    background-color: #DF9C34;
+}
+
+.dice .top {
+    transform: rotateX(90deg) translateY(-50px);
+    transform-origin: top center;
+    background-color: #C51A29;
+}
+
+.dice .bottom {
+    transform: rotateX(-90deg) translateY(50px);
+    transform-origin: bottom center;
+    background-color: #DF9C34;
+}
+
+/*NAVBAR*/
+#logoNav {
+    position: absolute;
+    width: 80px;
+    left: 30px;
+
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+/* link que ainda não foi visitado */
+a:link {
+  color: inherit
+}
+
+/* link que foi visitado */
+a:visited {
+   color: inherit
+}
+
+/* mouse over */
+a:hover {
+  color: inherit
+}
+
+/* link selecionado */
+a:active {
+  color: inherit
+}
+.navbar {
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    font-family: Arial;
+    border-radius: 10px;
+    margin-left: 150px;
+    margin-top: 10px;
+
+
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: #161616;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #161616;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    border-radius: 10px;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+    background-color: #C51A29;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.dropdown-content {
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #c51a28ab;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#logo{
+    width: 300px;
+    position: absolute;
+    left: 900px;
+}
+/* Estilos para telas grandes */
+@media screen and (min-width: 768px) {
+    .container {
+      flex-direction: row;
+    }
+  
+    .bet-form {
+      width: 500px;
+    }
+  
+    .dice {
+      right: 100px;
+    }
+  
+    #logoNav {
+      left: 30px;
+    }
+  
+    #logo {
+      left: 900px;
+    }
+  }
+  
+  /* Estilos para telas pequenas */
+  @media screen and (max-width: 767px) {
+    .container {
+      flex-direction: column;
+      align-items: stretch;
+      top: 0;
+    }
+  
+    .bet-form {
+      width: 100%;
+    }
+  
+    .dice {
+      right: auto;
+    }
+  
+    #logoNav {
+      left: 10px;
+      top: 10px;
+    }
+  
+    #logo {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 10px;
+    }
+  }
+  

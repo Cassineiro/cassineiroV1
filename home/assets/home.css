@@ -1,0 +1,345 @@
+.list {
+  height: 200px;
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+}
+
+body {
+  overflow-x: hidden;
+  font-family: helvetica;
+}
+
+.list li {
+  overflow-x: hidden;
+  list-style-type: none;
+  width: 1000px;
+  height: 300px;
+  opacity: .100;
+  position: absolute;
+  left: 10%;
+  margin-left: -10px;
+  border-radius: 2px;
+  background-image: url('../assets/imgs/Cassineiro\ o\ melhor\ site\ de\ apostas\ do\ Brasil\ 1.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 1s, opacity 1s;
+  overflow: hidden;
+}
+
+.list .act {
+  opacity: 100%;
+}
+
+.list .prev,
+.list .next {
+  cursor: pointer;
+}
+
+.list .prev {
+  transform: translateX(-220px) scale(.85);
+}
+
+.list .next {
+  transform: translateX(220px) scale(.85);
+}
+
+.list .hide {
+  transform: translateX(-420px) scale(.85);
+}
+
+.list .new-next {
+  transform: translateX(420px) scale(.85);
+}
+
+.list .hide,
+.list .new-next {
+  opacity: 0;
+  transition: opacity .2s, transform .5s;
+}
+
+.swipe {
+  width: 270px;
+  height: 200px;
+  position: absolute;
+  background-color: green;
+  border-radius: 2px;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+#logoNav {
+  position: absolute;
+  width: 80px;
+  left: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* link que ainda não foi visitado */
+a:link {
+  color: inherit;
+}
+
+/* link que foi visitado */
+a:visited {
+  color: inherit;
+}
+
+/* mouse over */
+a:hover {
+  color: inherit;
+}
+
+/* link selecionado */
+a:active {
+  color: inherit;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  font-family: Arial;
+  border-radius: 10px;
+  margin-left: 150px;
+  margin-top: 10px;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: #161616;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #161616;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  border-radius: 10px;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #C51A29;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+.dropdown-content {
+  border-radius: 10px;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #c51a28ab;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#logo {
+  width: 300px;
+  position: absolute;
+  left: 900px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  left: 130px;
+  margin-top: 200px;
+  width: 10px;
+}
+
+.cards .red {
+  background-color: #DF9C34;
+}
+
+.cards .blue {
+  background-color: #DF9C34;
+}
+
+.cards .green {
+  background-color: #DF9C34;
+}
+
+.cards .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100px;
+  width: 450px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.cards .card p.tip {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.cards .card p.second-text {
+  font-size: .7em;
+}
+
+.cards .card:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.cards:hover > .card:not(:hover) {
+  filter: blur(5px);
+  transform: scale(0.9, 0.9);
+}
+
+#logo2 {
+  width: 350px;
+  position: relative;
+  top: 450px;
+  left: 850px;
+}
+
+/* Responsividade para telas grandes */
+@media (max-width: 1200px) {
+  .list {
+    top: 20%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+  }
+
+  .list li {
+    width: 800px;
+    height: 200px;
+  }
+
+  .cards {
+    left: 5%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .cards .card {
+    width: 300px;
+  }
+
+  #logo {
+    width: 200px;
+    left: 30px;
+  }
+
+  #logo2 {
+    width: 250px;
+    top: 400px;
+    left: 700px;
+  }
+}
+
+/* Responsividade para telas médias */
+@media (max-width: 992px) {
+  .list {
+    top: 30%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+  }
+
+  .list li {
+    width: 600px;
+    height: 200px;
+  }
+
+  .cards {
+    left: 5%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .cards .card {
+    width: 300px;
+  }
+
+  #logo {
+    width: 150px;
+    left: 30px;
+  }
+
+  #logo2 {
+    width: 200px;
+    top: 400px;
+    left: 600px;
+  }
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .list {
+    top: 40%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+  }
+
+  .list li {
+    width: 400px;
+    height: 150px;
+  }
+
+  .cards {
+    left: 5%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .cards .card {
+    width: 250px;
+  }
+
+  #logo {
+    display: none;
+  }
+
+  #logo2 {
+    width: 150px;
+    top: 300px;
+    left: 500px;
+  }
+}

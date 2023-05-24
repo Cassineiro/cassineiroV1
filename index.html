@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="./main/main.css">
+    <link rel="shortcut icon" href="./main/imgs/favicon.ico" id="icon">
+    <title>Cassineiro</title>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <img src="./main/imgs/Group 19.svg" alt="" id="logoNav">
+        <a href="#home">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn" hre>Jogos
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#DiceRoll">DiceRoll</a>
+                <a href="#jackPot">JackPot</a>
+                <a href="#Roleta">Roleta</a>
+            </div>
+        </div>
+        <a href="./login/login.html">Entrar</a>
+    </div>
+
+    <div id="home">
+        <img src="./main/imgs/Group 19.svg" alt="" id="logo">
+        <div class="title">
+            <h1>Sinta a emoção de Las Vegas <b>sem sair de casa</b></h1>
+            <p>Seja um vencedor em nosso cassino e desfrute de um mundo de possibilidades!</p>
+        </div>
+        <button class="btn">
+            <a href="./cadastro/cadastro.html">CRIE UMA CONTA</a>
+        </button>
+        <h3 id="subTitle">Já é um jogador? <b><a href="./login/login.html">ENTRE</a></b></h3>
+
+        <section>
+            <div class="animation" id="JackPot">Aqui a sorte está sempre ao seu lado</div>
+        </section>
+    </div>
+
+    <div id="jogos">
+        <div id="DiceRoll">
+            <h2 id="drTitle">Dice Roll</h2>
+            <p id="drTxt">Escolha um número do dado, aposte suas fichas e deixe a sorte rolar.</p>
+            <section class="dice">
+                <div class="div"></div>
+                <div class="div"></div>
+                <div class="div"></div>
+                <div class="div"></div>
+                <div class="div"></div>
+                <div class="div"></div>
+              </section>
+        </div>
+        <div id="jackPot">
+            <h2 id="jpTitle">
+                Jack Pot
+            </h2>
+            <p id="jpTxt">
+                Gire a alavanca da sorte!
+            </p>
+            <img src="./main/imgs/jackPot.png" alt="" id="jackImg">
+        </div>
+        <div id="Roleta">
+            <h2 id="rTitle">
+                Roleta
+            </h2>
+            <p id="rTxt">
+                Será que você consegue o prêmio máximo?
+            </p>
+            <div class="folha">
+                <div class="seta"></div>
+                <div class="roleta" id="roleta">
+                    <div class="box1"></div>
+                    <div class="box2"></div>
+                    <div class="box3"></div>
+                    <div class="box4"></div>
+                    <div class="box5"></div>
+                    <div class="box6"></div>
+                    <div class="box7"></div>
+                    <div class="box8"></div>
+                    
+                    <div class="premio premio1" id="opt1">Cassineiro</div>
+                    <div class="premio premio2" id="opt0">Cassineiro</div>
+                    <div class="premio premio3" id="opt7">Cassineiro</div>
+                    <div class="premio premio4" id="opt6">Cassineiro</div>
+                    <div class="premio premio5" id="opt5">Cassineiro</div>
+                    <div class="premio premio6" id="opt4">Cassineiro</div>
+                    <div class="premio premio7" id="opt3">Cassineiro</div>
+                    <div class="premio premio8" id="opt2">Cassineiro</div>
+                    
+                    <div id="btnPlay" class="btnRoleta play" onclick="playOnClick()">►</div>
+                    <div id="btnStop" class="btnRoleta stop" onclick="stopOnClick()">❚❚</div>
+                </div>
+            </div>
+            <p id="msgGanhador"></p>
+        </div>
+    </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+
+    <script src="./main/main.js"></script>
+</body>
+
+</html>

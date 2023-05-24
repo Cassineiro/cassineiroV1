@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jogo de Roleta</title>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <link rel="stylesheet" href="./css/roleta.css">
+    <link rel="shortcut icon" href="/main/imgs/Group 19.svg" id="icon">
+    <title>Cassineiro</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="./assets/imgs/Group 19.svg" alt="" id="logoNav">
+        <a href="/home/home.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn" hre>Jogos
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/jogos/diceRoll/diceRoll.html">DiceRoll</a>
+                <a href="/jogos/jackPot/jackPot.html">JackPot</a>
+                <a href="/jogos/roleta/roleta.html">Roleta</a>
+            </div>
+        </div>
+    </div>
+    <form>
+        <input type="number" id="number" name="number" min="1" max="16" class="input" placeholder="Escolha um número">
+        <br>
+        <input type="number" id="fichas" name="fichas" min="1" max="50" class="input" placeholder="Quantidade de fichas">
+        <br>
+        <select id="valor-ficha" class="itens">
+                <option value="1">1</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+        </select>
+        <br>
+        
+    </form>
+    <input type="button" value="Apostar" onclick="apostar()" onclick="spin()" value="girar" class="learn-more">
+    <canvas id="wheelcanvas" width="1000" height="1000"></canvas>
+    <div id="mensagem"></div>
+    <script src="./js/roleta.js"></script>

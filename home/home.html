@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/home.css">
+    <link rel="shortcut icon" href="/main/imgs/Group 19.svg" id="icon">
+    <title>Cassineiro</title>
+<body>
+    <div class="navbar">
+        <img src="./assets/imgs/Group 19.svg" alt="" id="logoNav">
+        <a href="../home/home.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn" hre>Jogos
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/jogos/diceRoll/diceRoll.html">DiceRoll</a>
+                <a href="/jogos/jackPot/jackPot.html">JackPot</a>
+                <a href="/jogos/roleta/roleta.html">Roleta</a>
+            </div>
+        </div>
+    </div>
+    <ul class="list">
+        <li class="hide"></li>
+        <li class="prev"></li>
+        <li class="act"></li>
+        <li class="next"></li>
+        <li class="next new-next"></li>
+      </ul>
+      
+      <div class="swipe"></div>
+      
+      <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+    <img src="./assets/imgs/Group 19.svg" alt="" id="logo2">
+    <div class="cards">
+        <div class="card red">
+            <p class="tip"><a href="../jogos/diceRoll/diceRoll.html">DiceRoll</a></p>
+            <p class="second-text">Role o dado e veja sua sorte!</p>
+        </div>
+        <div class="card blue">
+            <p class="tip"><a href="../jogos/jackPot/jackPot.html">JackPot</a></p>
+            <p class="second-text">A alavanca da sorte</p>
+        </div>
+
+        <div class="card green">
+                <p class="tip"><a href="../jogos/roleta/roleta.html">Roleta</a></p>
+                <p class="second-text">Como está sua sorte hoje?</p>
+        </div>
+
+    </div>
+    <script src="./assets/home.js"></script>
+</body>
+
+</html>

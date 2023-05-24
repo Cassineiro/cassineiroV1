@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="/main/imgs/Group 19.svg" id="icon">
+    <title>Cassineiro</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+<body>
+   <div class="navbar">
+        <img src="./assets/imgs/Group 19.svg" alt="" id="logoNav">
+        <a href="/home/home.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn" hre>Jogos
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/jogos/diceRoll/diceRoll.html">DiceRoll</a>
+                <a href="/jogos/jackPot/jackPot.html">JackPot</a>
+                <a href="/jogos/roleta/roleta.html">Roleta</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="dice" class="dice">
+            <div class="face front">1</div>
+            <div class="face back">6</div>
+            <div class="face left">4</div>
+            <div class="face right">3</div>
+            <div class="face top">2</div>
+            <div class="face bottom">5</div>
+        </div>
+        <div id="result"></div>
+        <div class="bet-form">
+            <input type="number" id="diceNumber" min="1" max="6" placeholder="Escolha o número do dado">
+            <br>
+            <input type="number" id="chipQuantity" min="1" placeholder="Escolha a quantidade de fichas">
+            <br>
+            <input type="number" id="betValue" min="1" placeholder="Escolha o valor da aposta">
+
+            <button id="rollButton">Apostar</button>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

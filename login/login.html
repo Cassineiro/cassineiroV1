@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./login.css">
+    <link rel="shortcut icon" href="/main/imgs/Group 19.svg" id="icon">
+    <title>Cassineiro</title>
+</head>
+<body>
+    <div class="container">
+        <label for="">Email</label>
+        <input type="text" name="" id="email"><br>
+        <label for="">Senha</label>
+        <input type="password" name="" id="senha"> <br>
+        <button onclick="login()">Entrar</button>
+        <button id="googleSignupButton">Logar com o Google</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="loginFirebase.js"></script>
+</body>
+</html>

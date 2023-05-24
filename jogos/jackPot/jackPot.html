@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/jackPot.css">
+    <link rel="shortcut icon" href="/main/imgs/Group 19.svg" id="icon">
+    <title>Cassineiro</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="./assets/imgs/Group 19.svg" alt="" id="logoNav">
+        <a href="/home/home.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn" hre>Jogos
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/jogos/diceRoll/diceRoll.html">DiceRoll</a>
+                <a href="/jogos/jackPot/jackPot.html">JackPot</a>
+                <a href="/jogos/roleta/roleta.html">Roleta</a>
+            </div>
+        </div>
+    </div>
+    <div id="slots">
+        <div class="slot">0</div>
+        <div class="slot">0</div>
+        <div class="slot">0</div>
+        <div class="lever"></div>
+    </div>
+    <div id="result"></div>
+    <div id="controls">
+        <form onsubmit="event.preventDefault(); spin();">
+            <input id="betAmount" type="number" min="1" max="10" step="1" value="1">
+            <button type="submit">Girar</button>
+        </form>
+        
+        <div id="coins">Moedas: 10</div> 
+    </div>
+
+
+    <script src="./js/jackPot.js"></script>
+</body>
+
+</html>
