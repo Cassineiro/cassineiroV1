@@ -1,80 +1,79 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  transition: box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+button {
+  margin: 5px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Responsividade para telas grandes */
+@media (max-width: 1200px) {
   .container {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
+    width: 400px;
   }
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
+}
+
+/* Responsividade para telas médias */
+@media (max-width: 992px) {
+  .container {
+    width: 250px;
   }
-  
-  input[type="text"],
-  input[type="password"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 15px;
-    transition: box-shadow 0.3s;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .container {
+    width: 200px;
   }
-  
-  input[type="text"]:focus,
-  input[type="password"]:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-  }
-  
-  button {
-    margin: 5px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px;
-    width: 100%;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  /* Responsividade para telas grandes */
-  @media (max-width: 1200px) {
-    .container {
-      width: 400px;
-    }
-  }
-  
-  /* Responsividade para telas médias */
-  @media (max-width: 992px) {
-    .container {
-      width: 250px;
-    }
-  }
-  
-  /* Responsividade para telas pequenas */
-  @media (max-width: 768px) {
-    .container {
-      width: 200px;
-    }
-  }
- 
+}

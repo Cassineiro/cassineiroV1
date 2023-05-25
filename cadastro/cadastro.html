@@ -11,20 +11,25 @@
 </head>
 
 <body>
-        <div class="container">
-            <label for="username">Nome de usuário:</label>
-            <input type="text" name="username" id="username">
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email">
+    <div id="left">
+        <div class="containerCadastro">
+            <h6>Cadastro</h6>
+            <input type="text" name="username" id="username" placeholder="Username">
+            <input type="email" name="email" id="email" placeholder="E-mail">
             <br>
-            <label for="password">Senha:</label>
-            <input type="password" name="password" id="password">
+            <input type="password" name="password" id="password" placeholder="Senha">
             <br>
             <button id="register-btn">Cadastrar</button>
             <br>
             <button id="googleSignupButton">Cadastrar com o Google</button>
+        </div>
+    </div>
 
-    
+    <div id="right">
+        <div class="containerSvg">
+            <img src="money.svg" alt="SVG" id="svg">
+        </div>
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
